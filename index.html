@@ -190,6 +190,23 @@
         .change-btn:hover {
             background-color: #219a52;
         }
+
+        /* Bounce Animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 0.8s ease;
+        }
     </style>
 </head>
 <body>
@@ -303,5 +320,42 @@
             <p>Fresh Eggs | Sustainable Farming | Quality Guaranteed</p>
         </div>
     </footer>
+
+    <script>
+        // A. Variables and Output – Display name and course
+        var studentName = "Dionola GessaMae";
+        var course = "BS Information Technology";
+        
+        document.getElementById("nameOutput").innerHTML = "<strong>Name:</strong> " + studentName;
+        document.getElementById("courseOutput").innerHTML = "<strong>Course:</strong> " + course;
+
+        // B. Button Function – Show alert on click
+        function showAlert() {
+            alert("Welcome to Dionola's Layer Egg Farm!\n\nThank you for visiting our website.");
+        }
+
+        // C. User Input – Display input dynamically
+        function displayInput() {
+            var userInput = document.getElementById("userInput").value;
+            if (userInput.trim() !== "") {
+                document.getElementById("userInputDisplay").innerHTML = "<strong>You entered:</strong> " + userInput;
+            } else {
+                document.getElementById("userInputDisplay").innerHTML = "Please enter your name above.";
+            }
+        }
+
+        // D. Event Handling – Change content dynamically
+        document.getElementById("changeContentBtn").addEventListener("click", function() {
+            var dynamicContent = document.getElementById("dynamicContent");
+            dynamicContent.innerHTML = "<p><strong>Content Changed!</strong><br>You successfully triggered the event handler. The content has been dynamically updated.</p>";
+            dynamicContent.style.backgroundColor = "#d4edda";
+            dynamicContent.style.border = "2px solid #28a745";
+            
+            // Add bounce effect
+            dynamicContent.classList.remove("bounce");
+            void dynamicContent.offsetWidth; // Trigger reflow to restart animation
+            dynamicContent.classList.add("bounce");
+        });
+    </script>
 </body>
 </html>
