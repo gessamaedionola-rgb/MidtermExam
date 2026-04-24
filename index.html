@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Structured Webpage</title>
+    <title>Layer Egg Farm - Fresh Eggs Daily</title>
     <style>
         /* Tag Selectors */
         body {
@@ -123,14 +123,81 @@
             font-size: 0.9em;
             opacity: 0.8;
         }
+
+        /* JavaScript Demo Section Styles */
+        .demo-section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        .input-group input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        #userInputDisplay {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f4f8;
+            border-radius: 5px;
+            color: #2c3e50;
+        }
+
+        #dynamicContent {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .change-btn {
+            background-color: #27ae60;
+        }
+
+        .change-btn:hover {
+            background-color: #219a52;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header id="main-header">
         <div class="container">
-            <div id="site-logo">My Website</div>
-            <p>Welcome to Our Structured Webpage</p>
+            <div id="site-logo">Dionola's Layer Egg Farm</div>
+            <p>Fresh, Farm-Fresh Eggs Daily</p>
         </div>
     </header>
 
@@ -149,44 +216,81 @@
 
     <!-- Main Content Area -->
     <div class="container">
+        <!-- JavaScript Demo Section -->
+        <section id="main-section" class="demo-section">
+            <h3>A. Variables and Output - Display Name and Course</h3>
+            <p id="nameOutput"></p>
+            <p id="courseOutput"></p>
+        </section>
+
+        <section id="main-section" class="demo-section">
+            <h3>B. Button Function - Show Alert on Click</h3>
+            <p>Click the button below to see an alert message:</p>
+            <button class="btn" onclick="showAlert()">Click Me!</button>
+        </section>
+
+        <section id="main-section" class="demo-section">
+            <h3>C. User Input - Display Input Dynamically</h3>
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="Enter your name">
+                <button class="btn" onclick="displayInput()">Submit</button>
+            </div>
+            <div id="userInputDisplay"></div>
+        </section>
+
+        <section id="main-section" class="demo-section">
+            <h3>D. Event Handling - Change Content Dynamically</h3>
+            <p>Click the button to change the content below:</p>
+            <button class="btn change-btn" id="changeContentBtn">Change Content</button>
+            <div id="dynamicContent">
+                <p>This is the original content. Click the button above to change me!</p>
+            </div>
+        </section>
+
         <div class="content-wrapper">
             <!-- Main Section -->
             <section id="main-section" class="main-content">
-                <h2>Welcome to Our Site</h2>
-                <p>This is the main section of our webpage. Here you will find important information about our company and the services we offer.</p>
+                <h2>Welcome to Dionola's Layer Egg Farm</h2>
+                <p>We provide fresh, high-quality eggs from healthy, well-cared-for layer hens. Our farm is dedicated to sustainable and ethical egg production.</p>
                 
                 <div class="highlight">
-                    <p><strong>Featured:</strong> Check out our latest updates and news below!</p>
+                    <p><strong>Fresh Daily:</strong> Our eggs are collected and packaged fresh every morning!</p>
                 </div>
 
                 <!-- Articles -->
                 <article class="article-card">
-                    <h3>Getting Started</h3>
-                    <p>Learn how to get started with our platform. We provide comprehensive guides and tutorials to help you succeed.</p>
-                    <p>Our team is dedicated to providing you with the best experience possible.</p>
+                    <h3>Our Layer Hens</h3>
+                    <p>We raise healthy layer hens in a clean, spacious environment. Our birds are fed with premium quality feed to ensure the best egg quality.</p>
+                    <p>We specialize in producing brown and white eggs that are rich in nutrients and flavor.</p>
                 </article>
 
                 <article class="article-card">
-                    <h3>Our Services</h3>
-                    <p>We offer a wide range of services tailored to meet your needs. From web development to consulting, we've got you covered.</p>
-                    <p>Contact us today to learn more about how we can help your business grow.</p>
+                    <h3>Egg Products & Services</h3>
+                    <p>We offer a variety of egg products tailored to meet your needs:</p>
+                    <ul>
+                        <li>Fresh Table Eggs (Brown & White)</li>
+                        <li>Organic Eggs</li>
+                        <li>Bulk Orders for Restaurants & Bakeries</li>
+                        <li>Farm Visits & Educational Tours</li>
+                    </ul>
+                    <p>Contact us today to place your order or learn more about our farm-fresh eggs.</p>
                 </article>
             </section>
 
             <!-- Aside -->
             <aside id="main-aside" class="sidebar">
-                <h3>Quick Links</h3>
+                <h3>Why Choose Our Eggs?</h3>
                 <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Resources</a></li>
+                    <li>100% Fresh Daily</li>
+                    <li>Free-Range Hens</li>
+                    <li>No Hormones</li>
+                    <li>Nutrient-Rich</li>
                 </ul>
 
-                <h3 style="margin-top: 20px;">Newsletter</h3>
-                <p>Subscribe to our newsletter for the latest updates.</p>
+                <h3 style="margin-top: 20px;">Order Now</h3>
+                <p>Get fresh eggs delivered to your doorstep.</p>
                 <div class="highlight">
-                    <p>Join 1,000+ subscribers!</p>
+                    <p>Free delivery for orders over 50 eggs!</p>
                 </div>
             </aside>
         </div>
@@ -195,8 +299,8 @@
     <!-- Footer -->
     <footer id="main-footer">
         <div class="container">
-            <p id="copyright">&copy; 2026 My Website. All rights reserved.</p>
-            <p>Follow us on social media</p>
+            <p id="copyright">&copy; 2026 Dionola's Layer Egg Farm. All rights reserved.</p>
+            <p>Fresh Eggs | Sustainable Farming | Quality Guaranteed</p>
         </div>
     </footer>
 </body>
